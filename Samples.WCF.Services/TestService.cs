@@ -19,7 +19,7 @@ namespace Samples.WCF.Services
         {
             if (questionNumber <= 0)
             {
-                string OutOfRangeMessage = "Question Ids must be a positive value greater that 0";
+                const string OutOfRangeMessage = "Question Ids must be a positive value greater that 0";
                 IndexOutOfRangeException InvalidQuestionId = new IndexOutOfRangeException(OutOfRangeMessage);
                 throw new FaultException<IndexOutOfRangeException>(InvalidQuestionId, OutOfRangeMessage);
             }
