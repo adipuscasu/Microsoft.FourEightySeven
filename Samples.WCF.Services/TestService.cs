@@ -30,7 +30,8 @@ namespace Samples.WCF.Services
 
         public string[] GetExamOutline(string examName)
         {
-            throw new NotImplementedException();
+            if (examName == null) examName = "testExamName";
+            return examName.Split();
         }
 
         public AnswerDetails GetAnswerDetails(int questionNumber)
