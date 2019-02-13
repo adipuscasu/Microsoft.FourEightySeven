@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Microsoft.FourEightySeven.WebAPI.MessageHandlers;
 
 namespace Microsoft.FourEightySeven.WebAPI
 {
@@ -17,6 +18,7 @@ namespace Microsoft.FourEightySeven.WebAPI
                 defaults: new { id = RouteParameter.Optional }
             );
             config.EnableSystemDiagnosticsTracing();
+            config.MessageHandlers.Add(new LoggingMessageHandler());
         }
     }
 }
