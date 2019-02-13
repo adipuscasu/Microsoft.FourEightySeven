@@ -1,21 +1,20 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.FourEightySeven.WebAPI;
 using Microsoft.FourEightySeven.WebAPI.Controllers;
 
 namespace Microsoft.FourEightySeven.WebAPI.Tests.Controllers
 {
     [TestClass]
-    public class HomeControllerTest
+    public class CustomersControllerTest
     {
         [TestMethod]
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            CustomersController controller = new CustomersController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = controller.GetCustomers(1) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

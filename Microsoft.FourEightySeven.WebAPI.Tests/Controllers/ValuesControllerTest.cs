@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Web.Http;
+using Microsoft.FourEightySeven.DataModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.FourEightySeven.WebAPI;
 using Microsoft.FourEightySeven.WebAPI.Controllers;
 
 namespace Microsoft.FourEightySeven.WebAPI.Tests.Controllers
 {
     [TestClass]
-    public class ValuesControllerTest
+    public class AccountsControllerTest
     {
         [TestMethod]
         public void Get()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            AccountsController controller = new AccountsController();
 
             // Act
-            IEnumerable<string> result = controller.Get();
+            IEnumerable<Account> result = controller.GetAccounts();
 
             // Assert
             Assert.IsNotNull(result);
@@ -33,10 +29,10 @@ namespace Microsoft.FourEightySeven.WebAPI.Tests.Controllers
         public void GetById()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            AccountsController controller = new AccountsController();
 
             // Act
-            string result = controller.Get(5);
+            var result = controller.GetAccount(1);
 
             // Assert
             Assert.AreEqual("value", result);
@@ -46,10 +42,10 @@ namespace Microsoft.FourEightySeven.WebAPI.Tests.Controllers
         public void Post()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            AccountsController controller = new AccountsController();
 
             // Act
-            controller.Post("value");
+            //controller.Post("value");
 
             // Assert
         }
@@ -58,10 +54,10 @@ namespace Microsoft.FourEightySeven.WebAPI.Tests.Controllers
         public void Put()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            AccountsController controller = new AccountsController();
 
             // Act
-            controller.Put(5, "value");
+            //controller.Put(5, "value");
 
             // Assert
         }
@@ -70,10 +66,10 @@ namespace Microsoft.FourEightySeven.WebAPI.Tests.Controllers
         public void Delete()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            AccountsController controller = new AccountsController();
 
             // Act
-            controller.Delete(5);
+            //controller.Delete(5);
 
             // Assert
         }
