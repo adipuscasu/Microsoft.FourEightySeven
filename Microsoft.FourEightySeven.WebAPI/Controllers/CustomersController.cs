@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.FourEightySeven.DataAccess;
+using Microsoft.FourEightySeven.DataModel;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using Microsoft.FourEightySeven.DataAccess;
-using Microsoft.FourEightySeven.DataModel;
+using Microsoft.FourEightySeven.WebAPI.Filters;
 
 namespace Microsoft.FourEightySeven.WebAPI.Controllers
 {
-    public class CustomersController: ApiController
+    public class CustomersController : ApiController
     {
-        [HttpGet]        
+        [HttpGet]
+        [XmlOutput]
         public IEnumerable<Customer> GetCustomers()
         {
             return DataRepository.Customers;
