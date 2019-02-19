@@ -10,7 +10,7 @@ namespace Microsoft.FourEightySeven.WebAPI.Controllers
     public class CustomersController : ApiController
     {
         [HttpGet]
-        [XmlOutput]
+        //[XmlOutput]
         public IEnumerable<Customer> GetCustomers()
         {
             return DataRepository.Customers;
